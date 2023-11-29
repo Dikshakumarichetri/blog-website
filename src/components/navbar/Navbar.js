@@ -37,11 +37,11 @@ const Navbar = () => {
     <div>
       <Link href="/">FullStack</Link>
       <div>
-        {linkData.map((eachLinkData) => {
+        {linkData.map((eachLinkData) => (
           <Link key={eachLinkData.id} href={eachLinkData.url}>
             {eachLinkData.title}
           </Link>
-        })}
+        ))}
       </div>
     </div>
   );

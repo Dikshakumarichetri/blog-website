@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import styles from './navbar.module.css'
+import DarkLightToggle from "../DarkLightToggle/DarkLightToggle";
 
 const linkData = [
   {
@@ -39,7 +40,10 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>LOGO</Link>
+
       <div className={styles.links}>
+      <DarkLightToggle />
+
         {linkData.map((eachLinkData) => (
           <Link key={eachLinkData.id} href={eachLinkData.url} className={styles.link}>
             {eachLinkData.title}

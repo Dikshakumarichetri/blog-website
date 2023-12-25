@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styles from './navbar.module.css'
 import DarkLightToggle from "../DarkLightToggle/DarkLightToggle";
+import { signOut } from "next-auth/react";
 
 const linkData = [
   {
@@ -51,9 +52,7 @@ const Navbar = () => {
         ))}
         <button 
         className={styles.logout}
-         onClick={()=>{
-          console.log("logout");
-          }}>
+         onClick={signOut}>
           Logout
         </button>
       </div>

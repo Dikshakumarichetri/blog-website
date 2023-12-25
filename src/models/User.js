@@ -8,10 +8,11 @@ const userSchema = new Schema({
         unique:true,
         required:true
     },
-    name:{
+    email:{
         type:String,
-        unique:true,
-        required:true
+        // unique:true,
+        required:true,
+
     },
     password:{
         type:String,
@@ -20,4 +21,5 @@ const userSchema = new Schema({
 },{
     timestamps:true
 })
-export default mongoose.model("User",userSchema)
+//If the User collection does not exist create a new one.
+export default mongoose.models.User || mongoose.model("User", userSchema);

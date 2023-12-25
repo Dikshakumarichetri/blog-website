@@ -49,3 +49,4 @@ websites used
 1.https://nextjs.org/docs
 2.https://authjs.dev/getting-started/providers/oauth-tutorial
 3.https://cloud.mongodb.com
+4.console.google.cloud

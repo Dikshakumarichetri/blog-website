@@ -42,3 +42,10 @@ By default all the components are rendering on server side
 To change it to client side write "use client" on top of the page(
     when we need user interaction we need client side components
 )
+
+
+
+websites used 
+1.https://nextjs.org/docs
+2.https://authjs.dev/getting-started/providers/oauth-tutorial
+3.https://cloud.mongodb.com

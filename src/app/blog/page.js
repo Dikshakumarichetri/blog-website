@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  const res = await fetch("http://localhost:3000/api/posts", {
     next: { revalidate: 10 },
   });
 
@@ -16,26 +16,27 @@ async function getData() {
 }
 const Blog = async () => {
   const data = await getData();
+  console.log(data,"datauuuuuuuuuu");
   return (
     <div className={styles.maincontainer}>
       {data.map((item) => (
         <Link
-          href={`/blog/${item.id}`}
+          href={`/blog/${item._id}`}
           className={styles.container}
-          key={item.id}
+          key={item._id}
         >
           <div className={styles.imageContainer}>
             <Image
               className={styles.image}
               width={400}
               height={250}
-              src="https://img.freepik.com/free-vector/vector-illustration-mountain-landscape_1441-72.jpg?size=626&ext=jpg&ga=GA1.1.268648606.1701855016&semt=sph"
+              src={item.img}
               alt="img text"
             />
           </div>
           <div className={styles.content}>
-            <h1 className={styles.title}>Test</h1>
-            <p className={styles.desc}>Desc</p>
+            <h1 className={styles.title}>{item.title}</h1>
+            <p className={styles.desc}>{item.desc}</p>
           </div>
         </Link>
       ))}

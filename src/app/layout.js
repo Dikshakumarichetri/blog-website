@@ -3,7 +3,9 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Head from "next/head";
+
 import { ThemeProvider } from "@/context/ThemeContext";
+import AuthProvider from "@/components/AuthProvider/AuthProvider";
 //whatevr we write on this page applies on all the pages
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,11 +27,13 @@ export default function RootLayout({ children }) {
       </Head>
       <body className={inter.className}>
         <ThemeProvider>
+          <AuthProvider>
         <div className="container">
           <Navbar />
           {children}
           <Footer />
         </div>
+        </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

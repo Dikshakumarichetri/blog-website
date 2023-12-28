@@ -2,8 +2,10 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import HomeImg from "../../public/home.png";
 import CustomButton from "@/components/Button/button";
+import Blog from "./blog/page";
 export default function Home() {
   return (
+    <>
     <div className={styles.container}>
       <div className={styles.item}>
         <h1 className={styles.title}>
@@ -24,5 +26,10 @@ export default function Home() {
         <Image className={styles.img} src={HomeImg} alt="home image" />
       </div>
     </div>
+    <h1 className={styles.blogTitle}>
+      Recent Articles
+        </h1>
+    <Blog />
+          </>
   );
 }
